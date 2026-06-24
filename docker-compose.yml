@@ -1,0 +1,13 @@
+services:
+
+  api:
+
+    build: .
+
+    container_name: domu_api_java21
+
+    ports:
+      - "8080:8080"
+
+    volumes:
+      - .:/app
