@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: domu
+  datasource:
+    # url: jdbc:mysql://host.docker.internal:3306/api_java_clientes_npm?useSSL=false
+    url: jdbc:mysql://192.168.240.1:3306/api_java_clientes_npm?useSSL=false
+
+    # url: jdbc:mysql://host.docker.internal:3306/api_java_clientes_npm?useSSL=false
+    # url: jdbc:mysql://host.docker.internal:3306/api_java_clientes_NPM?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+
+    # username: ${USR_BBDD_INTERNAL:api_java_clientes_npm}
+    # username: ${USR_BBDD:root}
+
+    # password: ${PSW_BBDD:Cuatico1234*}
+    username: api_java_clientes_npm
+    # username: api_java_clientes_npm
+    # username: ${USR_BBDD:root}
+
+    password: Cuatico1234*
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: false
+    locations: classpath:db/migration
+    baseline-on-migrate: false
+    baseline-version: 0
+
+  jackson:
+    default-property-inclusion: non_null
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+# logging:
+#   level:
+#     org.springframework.boot.context.config: INFO
